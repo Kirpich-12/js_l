@@ -108,7 +108,14 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const dotProduct = x1 * x2 + y1 * y2;
+  const magnitude1 = Math.sqrt(x1 * x1 + y1 * y1);
+  const magnitude2 = Math.sqrt(x2 * x2 + y2 * y2);
+  if (magnitude1 === 0 || magnitude2 === 0) return 0;
+  const cosTheta = dotProduct / (magnitude1 * magnitude2);
+  return Math.acos(Math.min(Math.max(cosTheta, -1), 1));
+}
 
 /**
  * Returns a last digit of a integer number.
@@ -122,15 +129,8 @@ function getLinearEquationRoot(a, b) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  function getAngleBetweenVectors(x1, y1, x2, y2) {
-  const dotProduct = x1 * x2 + y1 * y2; 
-  const magnitude1 = Math.sqrt(x1 * x1 + y1 * y1); // длина первого вектора
-  const magnitude2 = Math.sqrt(x2 * x2 + y2 * y2); // длина второго вектора
-  if (magnitude1 === 0 || magnitude2 === 0) return 0;
-  const cosTheta = dotProduct / (magnitude1 * magnitude2);
-  return Math.acos(Math.min(Math.max(cosTheta, -1), 1)); // ограничиваем для точности
-}
+function getLastDigit(value) {
+  return Math.abs(value % 10);
 }
 
 /**
