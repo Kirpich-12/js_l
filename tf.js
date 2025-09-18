@@ -1,5 +1,6 @@
-function roundToPowerOfTen(num, pow) {
-  return num - (num % (10 * pow));
+function sortDigitNamesByNumericOrder(arr) {
+  const order = ['zero','one','two','three','four','five','six','seven','eight','nine'];
+  return arr.slice().sort((a, b) => order.indexOf(a) - order.indexOf(b));
 }
 
-console.log(roundToPowerOfTen(1234, 2))
+console.log(sortDigitNamesByNumericOrder([ 'nine','one' ]))
