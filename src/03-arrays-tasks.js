@@ -246,7 +246,7 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-  return arr.filter((_, index) => index % 2 === 1);
+  return arr.filter((i, index) => index % 2 === 1);
 }
 
 /**
@@ -446,7 +446,7 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-  return Array.from({ length: n }, (_, row) =>
+  return Array.from({ length: n }, (i, row) =>
     Array.from({ length: n }, (j, col) => (row === col ? 1 : 0))
   );
 }
@@ -465,7 +465,7 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-  return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+  return Array.from({ length: end - start + 1 }, (j, i) => start + i);
 }
 
 /**
